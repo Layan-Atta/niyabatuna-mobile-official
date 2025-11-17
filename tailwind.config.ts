@@ -57,6 +57,16 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        saudi: {
+          green: "hsl(var(--saudi-green))",
+          gold: "hsl(var(--saudi-gold))",
+        },
+      },
+      fontFamily: {
+        cairo: ['Cairo', 'sans-serif'],
+      },
+      backgroundImage: {
+        'hero-gradient': 'linear-gradient(135deg, hsl(var(--hero-gradient-start)), hsl(var(--hero-gradient-end)))',
       },
       borderRadius: {
         lg: "var(--radius)",
