@@ -1,27 +1,38 @@
+import { useState } from "react";
 import { FileWarning, Search, BookOpen, Calendar, Shield, Activity, Eye, LogIn } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { ActionCard } from "@/components/ActionCard";
 import { RightsCard } from "@/components/RightsCard";
 import { BottomNav } from "@/components/BottomNav";
+import { ReportScreen } from "@/components/ReportScreen";
+import { TrackingScreen } from "@/components/TrackingScreen";
+import { GuideScreen } from "@/components/GuideScreen";
 import logoSymbol from "@/assets/logo-symbol.png";
 import logoText from "@/assets/logo-text.png";
 
+type Screen = 'home' | 'report' | 'tracking' | 'guide';
+
 const Index = () => {
+  const [currentScreen, setCurrentScreen] = useState<Screen>('home');
+
   const mainActions = [
     {
       icon: FileWarning,
       title: "تقديم بلاغ",
       description: "الإبلاغ عن جريمة أو مخالفة",
+      onClick: () => setCurrentScreen('report'),
     },
     {
       icon: Search,
       title: "متابعة القضايا",
       description: "الاستعلام عن حالة القضايا والتحقيقات",
+      onClick: () => setCurrentScreen('tracking'),
     },
     {
       icon: BookOpen,
       title: "دليل الإجراءات",
       description: "شرح مبسط للحقوق والخطوات القانونية",
+      onClick: () => setCurrentScreen('guide'),
     },
     {
       icon: Calendar,
@@ -34,6 +45,21 @@ const Index = () => {
     { icon: Shield, title: "حقوق المتهم" },
     { icon: Activity, title: "آلية التحقيق" },
   ];
+
+  const handleBackToHome = () => setCurrentScreen('home');
+
+  // Render different screens based on state
+  if (currentScreen === 'report') {
+    return <ReportScreen onBack={handleBackToHome} />;
+  }
+
+  if (currentScreen === 'tracking') {
+    return <TrackingScreen onBack={handleBackToHome} />;
+  }
+
+  if (currentScreen === 'guide') {
+    return <GuideScreen onBack={handleBackToHome} />;
+  }
 
   return (
     <div className="min-h-screen bg-muted pb-20">
@@ -69,7 +95,7 @@ const Index = () => {
             مرحباً بك في النيابة العامة
           </h2>
           <p className="text-lg text-primary-foreground/90">
-            خدمات إلكترونية شاملة لتعزيز العدالة والشفافية
+            خدماتنا الرقمية في خدمتك
           </p>
         </div>
       </section>
