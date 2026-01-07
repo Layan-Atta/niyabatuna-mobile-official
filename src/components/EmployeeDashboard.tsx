@@ -1,8 +1,5 @@
 import { useState } from "react";
-import { 
-  ArrowRight, Calendar, FileText, GraduationCap, Briefcase, 
-  Mail, HelpCircle, Eye 
-} from "lucide-react";
+import { ArrowRight, Calendar, FileText, GraduationCap, Briefcase, Mail, HelpCircle, Eye } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { BottomNav } from "@/components/BottomNav";
 import { LeaveRequestScreen } from "@/components/LeaveRequestScreen";
@@ -11,61 +8,51 @@ import { TrainingScreen } from "@/components/TrainingScreen";
 import { FormsRepositoryScreen } from "@/components/FormsRepositoryScreen";
 import { AdminInboxScreen } from "@/components/AdminInboxScreen";
 import logoSymbol from "@/assets/logo-symbol.png";
-
 type Screen = 'home' | 'leave' | 'certificate' | 'training' | 'forms' | 'inbox' | 'inquiries';
-
 interface EmployeeDashboardProps {
   onBack: () => void;
 }
-
-export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
+export const EmployeeDashboard = ({
+  onBack
+}: EmployeeDashboardProps) => {
   const [currentScreen, setCurrentScreen] = useState<Screen>('home');
-
-  const serviceCategories = [
-    {
-      icon: Calendar,
-      title: "الإجازات",
-      description: "طلبات الإجازات بأنواعها",
-      color: "bg-blue-500",
-      onClick: () => setCurrentScreen('leave'),
-    },
-    {
-      icon: FileText,
-      title: "المشاهد",
-      description: "إصدار المشاهد والشهادات",
-      color: "bg-emerald-500",
-      onClick: () => setCurrentScreen('certificate'),
-    },
-    {
-      icon: GraduationCap,
-      title: "الدورات",
-      description: "طلبات التدريب والتطوير",
-      color: "bg-purple-500",
-      onClick: () => setCurrentScreen('training'),
-    },
-    {
-      icon: Briefcase,
-      title: "النماذج",
-      description: "مركز النماذج الإدارية",
-      color: "bg-orange-500",
-      onClick: () => setCurrentScreen('forms'),
-    },
-    {
-      icon: Mail,
-      title: "الاتصالات الإدارية",
-      description: "الوارد والصادر والتعاميم",
-      color: "bg-rose-500",
-      onClick: () => setCurrentScreen('inbox'),
-    },
-    {
-      icon: HelpCircle,
-      title: "استعلامات",
-      description: "استعلامات عامة ووظيفية",
-      color: "bg-cyan-500",
-      onClick: () => {},
-    },
-  ];
-
+  const serviceCategories = [{
+    icon: Calendar,
+    title: "الإجازات",
+    description: "طلبات الإجازات بأنواعها",
+    color: "bg-blue-500",
+    onClick: () => setCurrentScreen('leave')
+  }, {
+    icon: FileText,
+    title: "المشاهد",
+    description: "إصدار المشاهد والشهادات",
+    color: "bg-emerald-500",
+    onClick: () => setCurrentScreen('certificate')
+  }, {
+    icon: GraduationCap,
+    title: "الدورات",
+    description: "طلبات التدريب والتطوير",
+    color: "bg-purple-500",
+    onClick: () => setCurrentScreen('training')
+  }, {
+    icon: Briefcase,
+    title: "النماذج",
+    description: "مركز النماذج الإدارية",
+    color: "bg-orange-500",
+    onClick: () => setCurrentScreen('forms')
+  }, {
+    icon: Mail,
+    title: "الاتصالات الإدارية",
+    description: "الوارد والصادر والتعاميم",
+    color: "bg-rose-500",
+    onClick: () => setCurrentScreen('inbox')
+  }, {
+    icon: HelpCircle,
+    title: "استعلامات",
+    description: "استعلامات عامة ووظيفية",
+    color: "bg-cyan-500",
+    onClick: () => {}
+  }];
   const handleBackToHome = () => setCurrentScreen('home');
 
   // Render sub-screens
@@ -84,9 +71,7 @@ export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
   if (currentScreen === 'inbox') {
     return <AdminInboxScreen onBack={handleBackToHome} />;
   }
-
-  return (
-    <div className="min-h-screen bg-muted pb-20">
+  return <div className="min-h-screen bg-muted pb-20">
       {/* Header */}
       <header className="sticky top-0 z-40 bg-card shadow-sm">
         <div className="max-w-md mx-auto px-4 py-4">
@@ -119,17 +104,19 @@ export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
             </div>
             <div>
               <h2 className="text-lg font-bold text-foreground">أحمد عطاء</h2>
-              <p className="text-sm text-muted-foreground">الرقم الوظيفي: 102938</p>
+              <p className="text-sm text-muted-foreground">الرقم الوظيفي: 000000</p>
             </div>
           </div>
           <div className="grid grid-cols-2 gap-3 text-sm">
             <div className="bg-muted/50 rounded-lg p-2.5">
               <span className="text-muted-foreground block text-xs">المرتبة</span>
-              <span className="font-medium text-foreground">السابعة</span>
+              <span className="font-medium text-foreground">العاشرة</span>
             </div>
             <div className="bg-muted/50 rounded-lg p-2.5">
               <span className="text-muted-foreground block text-xs">الدرجة</span>
-              <span className="font-medium text-foreground">الثالثة</span>
+              <span className="font-medium text-foreground">الثانية عشرة   
+
+ </span>
             </div>
             <div className="bg-muted/50 rounded-lg p-2.5">
               <span className="text-muted-foreground block text-xs">القطاع</span>
@@ -141,7 +128,7 @@ export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
             </div>
           </div>
           <div className="mt-3 pt-3 border-t text-center">
-            <span className="text-sm text-accent font-medium">الخدمة: 5 سنوات</span>
+            <span className="text-sm text-accent font-medium">الخدمة: ؟5 سنوات      </span>
           </div>
         </div>
       </div>
@@ -150,19 +137,13 @@ export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
       <section className="max-w-md mx-auto px-4 mt-6">
         <h3 className="text-lg font-bold text-foreground mb-4">الخدمات الذاتية</h3>
         <div className="grid grid-cols-2 gap-4">
-          {serviceCategories.map((service, index) => (
-            <button
-              key={index}
-              onClick={service.onClick}
-              className="bg-card rounded-xl shadow-sm p-4 text-right hover:shadow-md hover:border-accent border-2 border-transparent transition-all group"
-            >
+          {serviceCategories.map((service, index) => <button key={index} onClick={service.onClick} className="bg-card rounded-xl shadow-sm p-4 text-right hover:shadow-md hover:border-accent border-2 border-transparent transition-all group">
               <div className={`w-12 h-12 rounded-xl ${service.color} flex items-center justify-center mb-3 group-hover:scale-110 transition-transform`}>
                 <service.icon className="h-6 w-6 text-white" />
               </div>
               <h4 className="font-bold text-foreground mb-1">{service.title}</h4>
               <p className="text-xs text-muted-foreground line-clamp-2">{service.description}</p>
-            </button>
-          ))}
+            </button>)}
         </div>
       </section>
 
@@ -175,6 +156,5 @@ export const EmployeeDashboard = ({ onBack }: EmployeeDashboardProps) => {
 
       {/* Bottom Navigation */}
       <BottomNav />
-    </div>
-  );
+    </div>;
 };
