@@ -124,7 +124,7 @@ export const EmployeeDashboard = ({
             </div>
             <div className="bg-muted/50 rounded-lg p-2.5">
               <span className="text-muted-foreground block text-xs">الفرع</span>
-              <span className="font-medium text-foreground">منطقة عسير</span>
+              <span className="font-medium text-foreground">منطقة جازان</span>
             </div>
           </div>
           <div className="mt-3 pt-3 border-t text-center">
