@@ -128,7 +128,7 @@ export const EmployeeDashboard = ({
             </div>
           </div>
           <div className="mt-3 pt-3 border-t text-center">
-            <span className="text-sm text-accent font-medium">الخدمة: ؟5 سنوات      </span>
+            <span className="text-sm text-accent font-medium">الخدمة: ثلاثة وعشرون عاماً              </span>
           </div>
         </div>
       </div>
